@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	>
+	<item
+		android:id = "@+id/done"
+		android:title = ""
+		app:showAsAction = "ifRoom|withText"
+		/>
+
+	<item
+		android:id = "@+id/main"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/view_renderer"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/view_binder"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/composite_view_renderer"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/view_state"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/diff_util"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/payload"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+
+	<item
+		android:id = "@+id/load_more"
+		android:title = ""
+		app:showAsAction = "never"
+		/>
+</menu>
