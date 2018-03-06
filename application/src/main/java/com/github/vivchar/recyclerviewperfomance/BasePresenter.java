@@ -2,6 +2,7 @@ package com.github.vivchar.recyclerviewperfomance;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 
 import io.reactivex.Observable;
@@ -17,6 +18,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public abstract class BasePresenter {
 
+	private static final String TAG = BasePresenter.class.getSimpleName();
+
 	@NonNull
 	private final CompositeDisposable disposables = new CompositeDisposable();
 
@@ -27,11 +30,24 @@ public abstract class BasePresenter {
 		disposables.clear();
 	}
 
-	protected void addSubscription(@NonNull final Observable observable, @NonNull final Consumer consumer) {
+
+	protected <T> void addSubscription(@NonNull final Observable<T> observable,
+	                                   @NonNull final Consumer<T> onNext) {
+		addSubscription(observable, onNext, getDefaultOnError());
+	}
+
+	@NonNull
+	private Consumer<Throwable> getDefaultOnError() {
+		return throwable -> Log.d(TAG, "getDefaultOnError", throwable);
+	}
+
+	protected <T> void addSubscription(@NonNull final Observable<T> observable,
+	                                   @NonNull final Consumer<T> onNext,
+	                                   @NonNull final Consumer<Throwable> onError) {
 		addSubscription(observable
-				.subscribeOn(Schedulers.newThread())
+				.subscribeOn(Schedulers.newThread()) //TODO move to up?
 				.observeOn(AndroidSchedulers.mainThread())
-				.subscribe(consumer)
+				.subscribe(onNext, onError)
 		);
 	}
 

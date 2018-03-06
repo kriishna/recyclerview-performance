@@ -39,11 +39,11 @@ class RendererPresenter extends BasePresenter {
 
 	@Override
 	protected void viewShown() {
-		addSubscription(Observable
-				.combineLatest(Observable.interval(0, 500, TimeUnit.MILLISECONDS), Observable.just(mList), (tick, items) -> items)
-				.subscribeOn(Schedulers.newThread())
-				.observeOn(AndroidSchedulers.mainThread())
-				.subscribe(items -> mView.updateItems(items))
+		addSubscription(
+				Observable
+						.combineLatest(Observable.interval(0, 500, TimeUnit.MILLISECONDS), Observable.just(mList), (tick, items) -> items)
+						.subscribeOn(Schedulers.newThread()),
+				items -> mView.updateItems(items)
 		);
 	}
 
