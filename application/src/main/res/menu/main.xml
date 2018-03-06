@@ -2,21 +2,16 @@
 <menu xmlns:android = "http://schemas.android.com/apk/res/android"
 	xmlns:app = "http://schemas.android.com/apk/res-auto"
 	>
-	<item
-		android:id = "@+id/done"
-		android:title = ""
-		app:showAsAction = "ifRoom|withText"
-		/>
 
 	<item
-		android:id = "@+id/main"
-		android:title = ""
+		android:id = "@+id/renderer"
+		android:title = "Renderer"
 		app:showAsAction = "never"
 		/>
 
 	<item
-		android:id = "@+id/view_renderer"
-		android:title = ""
+		android:id = "@+id/adapterDelegates"
+		android:title = "AdapterDelegates"
 		app:showAsAction = "never"
 		/>
 

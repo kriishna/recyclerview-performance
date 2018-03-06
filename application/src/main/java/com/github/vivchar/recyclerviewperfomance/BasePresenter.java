@@ -18,7 +18,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public abstract class BasePresenter {
 
-	private static final String TAG = BasePresenter.class.getSimpleName();
+	protected static final int INTERVAL = 100;
+	protected static final String TAG = BasePresenter.class.getSimpleName();
 
 	@NonNull
 	private final CompositeDisposable disposables = new CompositeDisposable();

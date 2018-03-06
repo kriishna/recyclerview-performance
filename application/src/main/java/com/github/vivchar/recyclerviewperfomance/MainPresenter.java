@@ -19,7 +19,6 @@ class MainPresenter extends BasePresenter {
 		mMenuController = menuController;
 		mUIRouter = UIRouter;
 		mUIRouter.openRendererPage();
-		mMenuController.hideMenuItem(DONE);
 	}
 
 	@Override
@@ -29,10 +28,11 @@ class MainPresenter extends BasePresenter {
 				menuItemID -> {
 					@MenuItemID final int menuID = menuItemID;
 					switch (menuID) {
-						case MAIN:
+						case RENDERER:
 							mUIRouter.openRendererPage();
 							break;
-						case DONE:
+						case ADAPTER_DELEGATES:
+							mUIRouter.openAdapterDelegatesPage();
 							break;
 						case DIFF_UTIL:
 							mUIRouter.openDiffUtilPage();
@@ -51,9 +51,6 @@ class MainPresenter extends BasePresenter {
 							break;
 						case COMPOSITE_VIEW_RENDERER:
 							mUIRouter.openCompositeViewRendererPage();
-							break;
-						case VIEW_RENDERER:
-							mUIRouter.openViewRendererPage();
 							break;
 					}
 				}

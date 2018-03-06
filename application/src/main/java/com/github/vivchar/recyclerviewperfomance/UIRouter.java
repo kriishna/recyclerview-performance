@@ -5,7 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.github.vivchar.recyclerviewperfomance.pages.RendererFragment;
+import com.github.vivchar.recyclerviewperfomance.pages.adapterdelegates.AdapterDelegatesFragment;
+import com.github.vivchar.recyclerviewperfomance.pages.renderer.RendererFragment;
 
 
 /**
@@ -34,10 +35,6 @@ public class UIRouter {
 		return mFragmentManager;
 	}
 
-	public void openRendererPage() {
-		showFragment(new RendererFragment());
-	}
-
 	private void showFragment(@NonNull final BaseScreenFragment fragment) {
 		try {
 			getFragmentManager().beginTransaction()
@@ -47,8 +44,12 @@ public class UIRouter {
 		}
 	}
 
-	public void openViewRendererPage() {
-//		showFragment(new ViewRendererFragment());
+	public void openRendererPage() {
+		showFragment(new RendererFragment());
+	}
+
+	public void openAdapterDelegatesPage() {
+		showFragment(new AdapterDelegatesFragment());
 	}
 
 	public void openViewBinderPage() {

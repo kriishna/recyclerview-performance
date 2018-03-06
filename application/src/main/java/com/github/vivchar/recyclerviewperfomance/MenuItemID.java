@@ -15,36 +15,33 @@ import static com.github.vivchar.recyclerviewperfomance.MenuItemID.*;
 
 @Retention(RetentionPolicy.SOURCE)
 @IntDef({
-		MAIN,
-		DONE,
+		RENDERER,
 		DIFF_UTIL,
 		PAYLOAD,
 		VIEW_STATE,
 		LOAD_MORE,
 		VIEW_BINDER,
 		COMPOSITE_VIEW_RENDERER,
-		VIEW_RENDERER,
+		ADAPTER_DELEGATES,
 })
 public @interface MenuItemID {
-	int MAIN = R.id.main;
-	int DONE = R.id.done;
+	int RENDERER = R.id.renderer;
 	int DIFF_UTIL = R.id.diff_util;
 	int PAYLOAD = R.id.payload;
 	int VIEW_STATE = R.id.view_state;
 	int LOAD_MORE = R.id.load_more;
 	int VIEW_BINDER = R.id.view_binder;
 	int COMPOSITE_VIEW_RENDERER = R.id.composite_view_renderer;
-	int VIEW_RENDERER = R.id.view_renderer;
+	int ADAPTER_DELEGATES = R.id.adapterDelegates;
 
 	List<Integer> ALL = Arrays.asList(
-			MAIN,
-			DONE,
+			RENDERER,
 			DIFF_UTIL,
 			PAYLOAD,
 			VIEW_STATE,
 			LOAD_MORE,
 			VIEW_BINDER,
 			COMPOSITE_VIEW_RENDERER,
-			VIEW_RENDERER
+			ADAPTER_DELEGATES
 	);
 }
